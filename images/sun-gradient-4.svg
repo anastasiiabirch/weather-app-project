@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Шар_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1200 1200" style="enable-background:new 0 0 1200 1200;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:url(#XMLID_00000096031298706318434780000000272318774804301489_);}
+</style>
+<radialGradient id="XMLID_00000165207807009274262710000011792367743194292924_" cx="598.0038" cy="553.5688" r="921.5911" gradientUnits="userSpaceOnUse">
+	<stop  offset="1.600000e-02" style="stop-color:#FF0200"/>
+	<stop  offset="0.2873" style="stop-color:#FF3B00"/>
+	<stop  offset="0.3969" style="stop-color:#FF5400"/>
+	<stop  offset="0.4718" style="stop-color:#FF5700;stop-opacity:0.9487"/>
+	<stop  offset="0.5171" style="stop-color:#FF5F00;stop-opacity:0.9177"/>
+	<stop  offset="0.5544" style="stop-color:#FF6D00;stop-opacity:0.8921"/>
+	<stop  offset="0.5875" style="stop-color:#FE8200;stop-opacity:0.8695"/>
+	<stop  offset="0.6177" style="stop-color:#FE9C00;stop-opacity:0.8488"/>
+	<stop  offset="0.6459" style="stop-color:#FEBC00;stop-opacity:0.8295"/>
+	<stop  offset="0.6719" style="stop-color:#FDE200;stop-opacity:0.8117"/>
+	<stop  offset="0.689" style="stop-color:#FDFF00;stop-opacity:0.8"/>
+</radialGradient>
+<path id="XMLID_00000124873358847753793950000017712473855984565131_" style="fill:url(#XMLID_00000165207807009274262710000011792367743194292924_);" d="
+	M510.8,50.6c352.3-59.5,653.2,241.3,593.7,593.7C1071.5,839,884,1026.6,689.2,1059.5C337,1119,36,818.1,95.5,465.8
+	C128.4,271.1,316,83.5,510.8,50.6z"/>
+</svg>
