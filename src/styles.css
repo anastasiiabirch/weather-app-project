@@ -1,12 +1,13 @@
 body {
   background: radial-gradient(rgb(245, 158, 210) 0%, rgb(247, 182, 249) 10%, rgb(247, 250, 167) 26%, rgb(249, 185, 198) 40%, rgb(241, 237, 252) 81%);
 }
-.container {
+
+.weather-container {
   background: rgba(255, 255, 255, 0.8);
   max-width: 700px;
   min-width: 700px;
   height: 505px;
-  margin-top: 70px;
+  margin: 70px auto 10px;
   font-family: 'Montserrat', sans-serif;
   color: #333333;
   border-radius: 10px;
@@ -178,4 +179,11 @@ h3 {
 
 .forecast-temperature {
   font-size: 14px;
+}
+small {
+  display: block;
+  text-align: center;  
+}
+a {
+  text-decoration: none
 }
