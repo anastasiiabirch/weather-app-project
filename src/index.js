@@ -1,6 +1,4 @@
-
-function formatDate (now) {
-  
+/* function formatDate(now) {
   let hours = now.getHours();
   if (hours < 10) {
     hours = `0${hours}`;
@@ -22,34 +20,95 @@ function formatDate (now) {
   let date = days[now.getDay()];
 
   return `${date}, ${hours}:${minutes}`;
+} */
+
+function formatDate(timestamp) {
+  //calculate the date
+  let date = new Date(timestamp);
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[date.getDay()];
+
+  return `${day}, ${hours}:${minutes}`;
+
 }
-let dateNow = document.querySelector("#dateNow");
-let now = new Date();
-dateNow.innerHTML = formatDate(now);
+
+
+//let now = new Date();
+
 
 function showCurrentWeather(response) {
   console.log(response);
   let city = document.querySelector(".city");
+  let country = document.querySelector(".country");
   let currentTemperature = Math.round(response.data.main.temp);
-  let currentTemperatureElement = document.querySelector("#temperature-current");
+  let currentTemperatureElement = document.querySelector(
+    "#temperature-current"
+  );
   let description = document.querySelector("#temperature-description");
   let feelsLike = Math.round(response.data.main.feels_like);
-  let feelsLikeElement= document.querySelector("#feelsLike");
+  let feelsLikeElement = document.querySelector("#feelsLike");
   let humidity = document.querySelector("#humidity");
-  let windSpeed = Math.round((response.data.wind.speed)*3.6);
+  let windSpeed = Math.round(response.data.wind.speed * 3.6);
   let windSpeedElement = document.querySelector("#windSpeed");
+
+  let dateElement = document.querySelector("#date");
+
+  /* let unixSunrise = response.data.sys.sunrise;
+  let sunriseDate = new Date(unixSunrise*1000);
+  let sunriseHours = sunriseDate.getHours();
+  if (sunriseHours < 10) {
+    sunriseHours = `0${sunriseHours}`;
+  }
+  let sunriseMinutes = sunriseDate.getMinutes();
+  if (sunriseMinutes < 10) {
+    sunriseMinutes = `0${sunriseMinutes}`;
+  }
+  console.log(sunriseDate);
+
+   let unixSunset = response.data.sys.sunset;
+   let sunsetDate = new Date(unixSunset * 1000);
+   let sunsetHours = sunsetDate.getHours();
+   if (sunsetHours < 10) {
+    sunsetHours = `0${sunsetHours}`;
+   }
+   let sunsetMinutes = sunsetDate.getMinutes();
+   if (sunsetMinutes < 10) {
+     sunsetMinutes = `0${sunsetMinutes}`;
+   }
+   console.log(sunsetDate); */
+/* 
+  
+  let sunriseElement = document.querySelector("#sunrise");
+  let sunsetElement = document.querySelector("#sunset"); */
+
   city.innerHTML = response.data.name;
+  country.innerHTML = response.data.sys.country;
   currentTemperatureElement.innerHTML = currentTemperature;
   description.innerHTML = response.data.weather[0].main;
   feelsLikeElement.innerHTML = feelsLike;
   humidity.innerHTML = response.data.main.humidity;
   windSpeedElement.innerHTML = windSpeed;
-
-  
-
-
+ /*  sunriseElement.innerHTML = `${sunriseHours}:${sunriseMinutes}`;
+  sunsetElement.innerHTML = `${sunsetHours}:${sunsetMinutes}`; */
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 }
-
 
 function search(event) {
   event.preventDefault();
@@ -59,8 +118,7 @@ function search(event) {
   let unit = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${apiKey}&units=${unit}`;
 
-  axios.get(apiUrl).then(showCurrentWeather); 
-
+  axios.get(apiUrl).then(showCurrentWeather);
 }
 
 let searchForm = document.querySelector("#search-form");
@@ -83,10 +141,3 @@ function getCurrentPosition() {
 
 let button = document.querySelector(".location_button");
 button.addEventListener("click", getCurrentPosition);
-
-
-
-
-
-
-

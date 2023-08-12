@@ -70,8 +70,15 @@ h1 {
   margin-left: 10px;
 }
 .city {
-  font-size: 36px;
+  font-size: 30px;
   text-transform: capitalize;
+  display: inline;
+}
+.country {
+  display: inline;
+  font-size: 15px;
+  color: rgb(100, 99, 99);
+
 }
 .temperature-current {
   font-size: 72px;
@@ -111,7 +118,7 @@ ul {
   margin-left: 30px;
   margin-right: 10px;
   line-height: 36px;
-  font-size: 15px;
+  font-size: 14px;
   text-align: center;
   font-family: "Montserrat", sans-serif;
   list-style:none;
