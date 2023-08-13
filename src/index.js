@@ -26,8 +26,33 @@ function formatDate(timestamp) {
 
 }
 
+function formatSunrise(timestamp) {
+  let sunriseTime = new Date(timestamp);
+  let hours = sunriseTime.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = sunriseTime.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
 
-//let now = new Date();
+}
+
+function formatSunset(timestamp) {
+  let sunsetTime = new Date(timestamp);
+  let hours = sunsetTime.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = sunsetTime.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
+}
+
 
 
 function showCurrentWeather(response) {
@@ -52,33 +77,8 @@ function showCurrentWeather(response) {
 
   celsiusTemperature = response.data.main.temp;
 
-  /* let unixSunrise = response.data.sys.sunrise;
-  let sunriseDate = new Date(unixSunrise*1000);
-  let sunriseHours = sunriseDate.getHours();
-  if (sunriseHours < 10) {
-    sunriseHours = `0${sunriseHours}`;
-  }
-  let sunriseMinutes = sunriseDate.getMinutes();
-  if (sunriseMinutes < 10) {
-    sunriseMinutes = `0${sunriseMinutes}`;
-  }
-  console.log(sunriseDate);
-
-   let unixSunset = response.data.sys.sunset;
-   let sunsetDate = new Date(unixSunset * 1000);
-   let sunsetHours = sunsetDate.getHours();
-   if (sunsetHours < 10) {
-    sunsetHours = `0${sunsetHours}`;
-   }
-   let sunsetMinutes = sunsetDate.getMinutes();
-   if (sunsetMinutes < 10) {
-     sunsetMinutes = `0${sunsetMinutes}`;
-   }
-   console.log(sunsetDate); */
-/* 
-  
   let sunriseElement = document.querySelector("#sunrise");
-  let sunsetElement = document.querySelector("#sunset"); */
+  let sunsetElement = document.querySelector("#sunset");
 
   city.innerHTML = response.data.name;
   country.innerHTML = response.data.sys.country;
@@ -87,9 +87,13 @@ function showCurrentWeather(response) {
   feelsLikeElement.innerHTML = feelsLike;
   humidity.innerHTML = response.data.main.humidity;
   windSpeedElement.innerHTML = windSpeed;
- /*  sunriseElement.innerHTML = `${sunriseHours}:${sunriseMinutes}`;
-  sunsetElement.innerHTML = `${sunsetHours}:${sunsetMinutes}`; */
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  dateElement.innerHTML = formatDate((response.data.dt + response.data.timezone - 7200) * 1000);
+  
+  sunriseElement.innerHTML = formatSunrise((response.data.sys.sunrise + response.data.timezone - 7200) * 1000);
+  sunsetElement.innerHTML = formatSunset(
+    (response.data.sys.sunset + response.data.timezone - 7200) * 1000
+  );
+  
   iconElement.setAttribute(
     "src",
     `images/${response.data.weather[0].icon}.svg`
