@@ -101,17 +101,20 @@ function showCurrentWeather(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
-function search(event) {
-  event.preventDefault();
-  let cityInput = document.querySelector(".search-input");
+function search(city) {
 
   let apiKey = "2696f40edf3a7e9f7998b9ca59be8b3d";
   let unit = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&appid=${apiKey}&units=${unit}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
 
   axios.get(apiUrl).then(showCurrentWeather);
 }
 
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#city-input");
+  search(cityInput.value);
+}
 
 function retrievePosition(position) {
   let lat = position.coords.latitude;
@@ -160,4 +163,6 @@ celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 
 let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", search);
+searchForm.addEventListener("submit", handleSubmit);
+
+search("Tokyo");
