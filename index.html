@@ -41,10 +41,10 @@
               </h1>
             </div>
             
-                <input type="text" class=" col-6 search-input" placeholder="my city"  autocomplete="off" />
+                <input type="search" class=" col-6 search-input" placeholder="my city"  autocomplete="off" />
             
               <button type="submit" class="col-1 search-button">
-                <img src="images/loupe-removebg-preview.png" alt="Search" class="search-img">
+                <img src="images/search-button.png" alt="Search" class="search-img">
               </button>
           </div>
         </form>
@@ -53,15 +53,16 @@
         <div class="row weather-current-all">
           <div class="col-5 weather-current">
             <div class="city-country"><span class="city">Duderstadt</span><span>,  </span><span class="country">DE</span></div> 
-            <div class="temperature-current" id="temperature-current">
-              16
+            <div class="float-left">
+              <div class="temperature-current" id="temperature-current">
+                16
+              </div>
+              <div class="scale">
+                <a href="#" class="active" id="celsius-link">°C</a>
+                <span>|</span>
+                <a href="#" id="fahrenheit-link">°F</a>
+              </div>
             </div>
-            <div class="scale">
-              <a href="#" id="celsius-link">°C</a>
-              <span>|</span>
-              <a href="#" id="fahrenheit-link">°F</a>
-            </div>
-            
             <div class="state" id="temperature-description">Partly cloudy</div>
             <div class="datetime-current" id="date">Friday 14:15</div>
           </div>

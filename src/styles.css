@@ -66,6 +66,9 @@ h1 {
   right: 80px;
   top: 0px;
 }
+.weather-current-all {
+  margin-top: 15px;
+}
 .weather-current{
   margin-left: 20px;
   margin-top: 20px;
@@ -82,23 +85,21 @@ h1 {
 
 }
 .temperature-current {
-  font-size: 72px;
+  font-size: 70px;
   font-weight: 400;
-  line-height: 72px;
+  line-height: 70px;
 
 }
 .scale {
   position: relative;
-  bottom: 70px;
-  left: 85px;
+  top: -65px;
+  left: 115px;
+  text-decoration: none;
+  
 }
-
-#celsius-link {
-  text-decoration: none;
-} 
-
-#fahrenheit-link {
-  text-decoration: none;
+.scale .active {
+  color: #333333;
+  cursor: default;
 }
 
 .state {
@@ -133,13 +134,13 @@ strong {
 }
 
 .characteristics-1 {
-  margin-top: 30px;
+  margin-top: 0;
   text-align: center;
   font-size: 15px;
   text-align: center;
   font-family: 'Source Code Pro', monospace;
   position: relative;
-  bottom: 15px;
+  margin-bottom: 10px;
   list-style: none;
 
 }
@@ -147,7 +148,6 @@ strong {
 
 .forecast-container {
   position: relative;
-  bottom: 20px;
   margin: 0 auto;
   margin-left: 10px;
   margin-right: 10px;
