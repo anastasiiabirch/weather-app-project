@@ -70,6 +70,8 @@ function showCurrentWeather(response) {
 
   let dateElement = document.querySelector("#date");
 
+  let iconElement = document.querySelector("#current-icon");
+
   /* let unixSunrise = response.data.sys.sunrise;
   let sunriseDate = new Date(unixSunrise*1000);
   let sunriseHours = sunriseDate.getHours();
@@ -101,13 +103,18 @@ function showCurrentWeather(response) {
   city.innerHTML = response.data.name;
   country.innerHTML = response.data.sys.country;
   currentTemperatureElement.innerHTML = currentTemperature;
-  description.innerHTML = response.data.weather[0].main;
+  description.innerHTML = response.data.weather[0].description;
   feelsLikeElement.innerHTML = feelsLike;
   humidity.innerHTML = response.data.main.humidity;
   windSpeedElement.innerHTML = windSpeed;
  /*  sunriseElement.innerHTML = `${sunriseHours}:${sunriseMinutes}`;
   sunsetElement.innerHTML = `${sunsetHours}:${sunsetMinutes}`; */
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  iconElement.setAttribute(
+    "src",
+    `images/${response.data.weather[0].icon}.svg`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function search(event) {

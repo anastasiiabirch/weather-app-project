@@ -22,7 +22,7 @@ h1 {
   line-height: 18px;
   font-weight: 500;
   color: rgb(100, 99, 99);
-  margin-left: 10px;
+  margin-left: 20px;
   letter-spacing: 1px;
 
 }
@@ -61,13 +61,14 @@ h1 {
   
 }
 .image-current {
-  width: 270px;
+  width: 240px;
   position: relative;
-  right: 60px;
+  right: 80px;
   top: 0px;
 }
 .weather-current{
-  margin-left: 10px;
+  margin-left: 20px;
+  margin-top: 20px;
 }
 .city {
   font-size: 30px;
@@ -105,6 +106,9 @@ h1 {
   bottom: 10px;
   font-size: 14px;
 }
+.state:first-letter {
+  text-transform: capitalize;
+}
 .datetime-current {
   position: relative;
   bottom: 10px;
@@ -129,12 +133,13 @@ strong {
 }
 
 .characteristics-1 {
+  margin-top: 30px;
   text-align: center;
   font-size: 15px;
   text-align: center;
   font-family: 'Source Code Pro', monospace;
   position: relative;
-  bottom: 20px;
+  bottom: 15px;
   list-style: none;
 
 }
