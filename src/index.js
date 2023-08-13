@@ -53,6 +53,34 @@ function formatSunset(timestamp) {
   return `${hours}:${minutes}`;
 }
 
+function showForecast() {
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  days.forEach(function (day) {
+    forecastHTML = forecastHTML + `
+    <div class="col-2 card">
+      <h3>${day}</h3>
+      <div class="img-area">
+        <img src="images/rain-2.svg" class="forecast-img forecast-img-1" />
+      </div>
+      <div class="forecast-temperature">
+        <span class="forecast-temperature-max">18°</span>
+        <span>|</span>
+        <span class="forecast-temperature-min">4°</span>
+      </div>
+    </div>`;
+
+  })
+  
+    forecastHTML = forecastHTML + `</div>`;
+    
+    forecastElement.innerHTML = forecastHTML;
+
+
+}
+
 
 
 function showCurrentWeather(response) {
@@ -79,6 +107,8 @@ function showCurrentWeather(response) {
 
   let sunriseElement = document.querySelector("#sunrise");
   let sunsetElement = document.querySelector("#sunset");
+
+  showForecast();
 
   city.innerHTML = response.data.name;
   country.innerHTML = response.data.sys.country;
@@ -150,8 +180,8 @@ function showCelsiusTemperature(event) {
 }
 
 
-let button = document.querySelector(".location_button");
-button.addEventListener("click", getCurrentPosition);
+//let button = document.querySelector(".location_button");
+//button.addEventListener("click", getCurrentPosition);
 
 let celsiusTemperature = null;
 
